@@ -30,8 +30,15 @@ print("2. Atimtis")
 print("3. Daugyba")
 print("4. Dalyba")
 
+while True:
+    choice = input ("Pasirink (1/2/3/4): ")
 
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float (input("Ivesk pirma skaiciu: "))
+            num2 = float (input("Ivesk antra skaiciu: "))
 
+         
 
 
 
