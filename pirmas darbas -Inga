@@ -38,7 +38,12 @@ while True:
             num1 = float (input("Ivesk pirma skaiciu: "))
             num2 = float (input("Ivesk antra skaiciu: "))
 
-         
+         except ValueError:
+            print("Klaida.")
+            continue
+
+        
+
 
 
 
