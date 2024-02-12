@@ -9,3 +9,29 @@ def funkcija():
 
 
     #komentaras
+
+
+
+
+#sudetis
+def add(x,y):
+    return x + y
+#atimtis
+def subtract(x, y):
+    return x - y 
+
+#daugyba
+def multiply(x, y):
+    return x * y 
+
+#dalyba
+def divide(x, y):
+    return x / y
+
+print("Pasirink veiksma")
+print("1.Sudetis")
+print("2.atimtis")
+print("3.daugyba")
+print("4.dalyba")
+
+while
