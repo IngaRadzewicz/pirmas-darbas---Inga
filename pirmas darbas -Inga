@@ -8,6 +8,4 @@ def funkcija():
     print('test: {}{}'.format{kintamasis2, kintamasis})
 
 
-    
-
-
+   
