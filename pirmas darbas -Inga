@@ -16,6 +16,7 @@ def funkcija():
 #sudetis
 def add(x,y):
     return x + y
+
 #atimtis
 def subtract(x, y):
     return x - y 
@@ -29,10 +30,10 @@ def divide(x, y):
     return x / y
 
 print("Pasirink veiksma")
-print("1.Sudetis")
-print("2.atimtis")
-print("3.daugyba")
-print("4.dalyba")
+print("1. Sudetis")
+print("2. Atimtis")
+print("3. Daugyba")
+print("4. Dalyba")
 
 while True:
     choice = input ("Pasirink (1/2/3/4): ")
