@@ -24,4 +24,17 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
+print("Pasirink veiksma")
+print("1. Sudetis")
+print("2. Atimtis")
+print("3. Daugyba")
+print("4. Dalyba")
+
+
+
+
+
+
+
+
 
