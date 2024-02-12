@@ -34,4 +34,28 @@ print("2.atimtis")
 print("3.daugyba")
 print("4.dalyba")
 
-while
+while True:
+    choice = input ("Pasirink (1/2/3/4): ")
+
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float (input("Ivesk pirma skaiciu: "))
+            num2 = float (input("Ivesk antra skaiciu: "))
+
+         except ValueError:
+            print("Klaida.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+
+
