@@ -4,13 +4,32 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+
+
+    return """"
+    
+    <h1>Hello, World!</h1>
+    
+    
+    """
+
+@app.route("/labas")
+def sakyk_labas():
+    return "Labas"
+
 
 if __name__ == "__main__":
     app.run()
 
 
+
+
+
+
+
+
 '''
+SKAICIUOTUVAS
 #sudetis
 def add(x,y):
     return x + y
