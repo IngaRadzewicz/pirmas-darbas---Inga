@@ -2,11 +2,13 @@ from flask import Flask
 
 app = Flask(__name__)
 
+skaicius = 0
+
 @app.route("/")
 def hello_world():
 
 
-    return """"
+    return """
     
     <h1>Hello, World!</h1>
     
@@ -15,7 +17,9 @@ def hello_world():
 
 @app.route("/labas")
 def sakyk_labas():
-    return "Labas"
+    global skaicius
+    skaicius = skaicius +1
+    return f"Labas {skaicius}"
 
 
 if __name__ == "__main__":
