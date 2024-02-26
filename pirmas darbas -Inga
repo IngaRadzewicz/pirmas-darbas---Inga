@@ -4,9 +4,25 @@ app = Flask(__name__)
 
 skaicius = 0
 
-#sudetis
+# Sudetis
 def sudetis(x,y):
     return x + y
+
+# Atimtis
+def atimtis(x, y):
+    return x - y
+
+# Daugyba
+def daugyba(x, y):
+    return x * y
+
+# Dalyba
+def dalyba(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Dalyba iš nulio negalima"
+
 
 @app.route("/") # Route1
 def hello_world():
@@ -47,6 +63,23 @@ def skaiciavimo():
     suma = sudetis(int(skaicius2),int(skaicius))
 
     return f"Tavo ivestas skaicius: {suma}"
+
+@app.route("/skaicius")
+def skaiciavimo():
+    skaicius1 = int(request.args.get("test"))
+    skaicius2 = int(request.args.get("test2"))
+
+    suma = sudetis(skaicius1, skaicius2)
+    skirtumas = atimtis(skaicius1, skaicius2)
+    sandauga = daugyba(skaicius1, skaicius2)
+    dalmuo = dalyba(skaicius1, skaicius2)
+
+    return f"""
+    <p>Sudetis: {suma}</p>
+    <p>Atimtis: {skirtumas}</p>
+    <p>Daugyba: {sandauga}</p>
+    <p>Dalyba: {dalmuo}</p>
+    """
 
 
 
