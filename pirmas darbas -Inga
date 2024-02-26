@@ -4,13 +4,30 @@ app = Flask(__name__)
 
 skaicius = 0
 
+#sudetis
+def sudetis(x,y):
+    return x + y
+
 @app.route("/") # Route1
 def hello_world():
 
 
     return """
-    
-    <h1>Hello, World!</h1>
+    <form action="/skaicius">
+                    <label for="test">skaicius 1</label><br>
+                        <input type="text" id="test" name="test" value="0"><br>
+                        </br></br>
+
+                    <label for="test2">skaicius 2</label><br>
+                        <input type="text" id="test2" name="test2" value="0"><br><br>
+                        </br></br>
+                        
+                    <label for="[[__ID__]]">skaicius 2</label><br>   
+                        <input type="text" id="[[__ID__]]" name="[[__ID__]]" value="0"><br><br>
+                        </br></br>
+
+                    <input type="submit" value="Submit">
+                </form>
     
     """
 
@@ -20,19 +37,22 @@ def sakyk_labas():
     skaicius = skaicius +1
     return f"Labas {skaicius}"
 
-@app.route("/skaicius")  # Route3
+
+
+@app.route("/skaicius") # Route 3
 def skaiciavimo():
-    args = request.args.get("test")
+    skaicius = request.args.get("test") 
+    skaicius2 = request.args.get("test2") 
 
-    return f"{args}"
+    suma = sudetis(int(skaicius2),int(skaicius))
 
-
+    return f"Tavo ivestas skaicius: {suma}"
 
 
 
 
 if __name__ == "__main__":
-    app.run
+    app.run()
 
 
 
