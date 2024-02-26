@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
 skaicius = 0
 
-@app.route("/")
+@app.route("/") # Route1
 def hello_world():
 
 
@@ -12,18 +12,28 @@ def hello_world():
     
     <h1>Hello, World!</h1>
     
-    
     """
 
-@app.route("/labas")
+@app.route("/labas") # Route2
 def sakyk_labas():
     global skaicius
     skaicius = skaicius +1
     return f"Labas {skaicius}"
 
+@app.route("/skaicius")  # Route3
+def skaiciavimo():
+    args = request.args.get("test")
+
+    return f"{args}"
+
+
+
+
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run
+
 
 
 
