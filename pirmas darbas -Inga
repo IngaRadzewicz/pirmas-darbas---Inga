@@ -5,7 +5,7 @@ app = Flask(__name__)
 skaicius = 0
 
 # Sudetis
-def sudetis(x,y):
+def sudetis(x, y):
     return x + y
 
 # Atimtis
@@ -24,50 +24,32 @@ def dalyba(x, y):
         return "Dalyba iš nulio negalima"
 
 
-@app.route("/") # Route1
+@app.route("/")  # Route1
 def hello_world():
-
-
     return """
-    <form action="/skaicius">
-                    <label for="test">skaicius 1</label><br>
-                        <input type="text" id="test" name="test" value="0"><br>
-                        </br></br>
+    <form action="/skaicius" method="post">
+        <label for="test">skaicius 1</label><br>
+        <input type="text" id="test" name="test" value="0"><br><br>
 
-                    <label for="test2">skaicius 2</label><br>
-                        <input type="text" id="test2" name="test2" value="0"><br><br>
-                        </br></br>
-                        
-                    <label for="[[__ID__]]">skaicius 2</label><br>   
-                        <input type="text" id="[[__ID__]]" name="[[__ID__]]" value="0"><br><br>
-                        </br></br>
+        <label for="test2">skaicius 2</label><br>
+        <input type="text" id="test2" name="test2" value="0"><br><br>
 
-                    <input type="submit" value="Submit">
-                </form>
-    
+        <input type="submit" value="Submit">
+    </form>
     """
 
-@app.route("/labas") # Route2
+
+@app.route("/labas")  # Route2
 def sakyk_labas():
     global skaicius
-    skaicius = skaicius +1
+    skaicius = skaicius + 1
     return f"Labas {skaicius}"
 
 
-
-@app.route("/skaicius") # Route 3
+@app.route("/skaicius", methods=["POST"])  # Route 3
 def skaiciavimo():
-    skaicius = request.args.get("test") 
-    skaicius2 = request.args.get("test2") 
-
-    suma = sudetis(int(skaicius2),int(skaicius))
-
-    return f"Tavo ivestas skaicius: {suma}"
-
-@app.route("/skaicius")
-def skaiciavimo():
-    skaicius1 = int(request.args.get("test"))
-    skaicius2 = int(request.args.get("test2"))
+    skaicius1 = int(request.form.get("test"))
+    skaicius2 = int(request.form.get("test2"))
 
     suma = sudetis(skaicius1, skaicius2)
     skirtumas = atimtis(skaicius1, skaicius2)
@@ -80,8 +62,6 @@ def skaiciavimo():
     <p>Daugyba: {sandauga}</p>
     <p>Dalyba: {dalmuo}</p>
     """
-
-
 
 
 if __name__ == "__main__":
